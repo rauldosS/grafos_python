@@ -6,19 +6,22 @@ class Empregado:
         self.sobrenome = sobrenome
         self.email = nome + '.' + sobrenome + '@gmail.com'
         self.salario = salario
+        
+        Empregado.num_empregados += 1
 
     def nome_completo(self):
         return '{} {}'.format(self.nome, self.sobrenome)
+    
+    def aplicar_aumento(self):
+        self.salario = self.salario * self.porcetagem_aumento
         
     def __str__(self):
         return f'{self.nome_completo()} - {self.email}'
         
-empregado_1 = Empregado('Raul', 'Moraes', 10000)
-empregado_2 = Empregado('Beltrano', 'Moraes', 5000)
-empregado_3 = Empregado('Raul', 'Moraes', 10000)
+emp_1 = Empregado('Fulano', 'Silva', 10000)
+emp_2 = Empregado('Boltrano', 'Silva', 5000)
 
-print(empregado_1)
-
+print('Total de empregados:', Empregado.num_empregados)
 # empregado_1.nome = 'Teste 1'
 # empregado_2.telefone = '1234'
 
