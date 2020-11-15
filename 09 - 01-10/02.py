@@ -22,8 +22,9 @@ posicoes = {
         'G': (2, 5)
     }
 
+
 # rotulos = nx.get_edge_attributes(G, 'weight')
-# nx.draw(G, posicoes, with_labels=True)
+nx.draw(G, posicoes, with_labels=True)
 # nx.draw_networkx_edge_labels(G, posicoes, edge_labels=rotulos)
 
 print("É Euleriano?", nx.is_eulerian(G))
