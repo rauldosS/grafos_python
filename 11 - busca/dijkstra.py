@@ -1,4 +1,6 @@
 import networkx as nx
+import collections
+
 G = nx.DiGraph()
 G.add_weighted_edges_from([
         ('A', 'B', 20), ('A', 'D', 80), ('A', 'G', 90),
@@ -23,7 +25,7 @@ posicoes = {
 
 caminhos = nx.single_source_dijkstra_path(G, 'A') # Todos os caminhos do A para todos os outros vértices
 distancias = nx.single_source_dijkstra_path_length(G, 'A') # Distancias mais curtas para todos os vértices
-# caminhos_od = collections.OrderedDict(sorted(caminhos.items()))
+caminhos_od = collections.OrderedDict(sorted(caminhos.items()))
 
 print(caminhos_od)
 
